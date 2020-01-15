@@ -30,7 +30,7 @@ class AddQuoteItem extends Component {
     }
 
     onListClick = (item) => {
-        console.log("click " + item)
+        // console.log("click " + item)
         this.props.toEstimate(item)
         this.toggle()
     }

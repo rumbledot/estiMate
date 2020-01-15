@@ -97,7 +97,7 @@ class p5Line {
 
         let newLine = new p5Line(lineOrigin[0], lineOrigin[1], (Math.floor(p5.mouseX / grid)) * grid, (Math.floor(p5.mouseY / grid)) * grid)
         lines.push(newLine)
-        console.log(lines)
+        // console.log(lines)
 
         lineOrigin = null
         }
@@ -161,11 +161,14 @@ class EstimatePage extends Component {
     onChange = (e) => {
         if (parseInt(e.target.value)) {
             // console.log("change" + e.target.value * e.target.name)
-            const t = parseInt(e.target.value) * parseInt(e.target.name)
-            const i = parseInt(e.target.id)
-
+            let t = parseInt(e.target.value) * parseInt(e.target.name)
+            let i = parseInt(e.target.id)
+            // let arr = [...this.state.itemTotal]
+            // arr[i] = t
             this.state.itemTotal[i] = t
+            // this.setState({itemTotal: arr})
             this.setState(this.state.itemTotal)
+            // console.log(this.state.itemTotal)
 
             this.getGrandTotal()
 
@@ -178,12 +181,27 @@ class EstimatePage extends Component {
     }
 
     getGrandTotal = () => {
+        // let t = [this.state.grandTotal]
+        this.state.grandTotal = 0
         for (let i=0; i < this.state.itemTotal.length; i++) {
             this.state.grandTotal += this.state.itemTotal[i]
+            // t += this.state.itemTotal[i]
         }
-        console.log("Grand total" + this.state.grandTotal)
+        // console.log("Grand total" + this.state.grandTotal)
+        // this.state.grandTotal = t
         this.forceUpdate()
-        // this.setState(this.state.grandTotal)
+        // this.setState({grandTotal: t})
+    }
+
+    removeQuoteItem = (index) => {
+        let array = [...this.state.quotedItems]
+        this.state.grandTotal -= this.state.itemTotal[index]
+        // console.log("index " + index)
+        // console.log("item removed val " + this.state.itemTotal[index])
+        // console.log("Grand total" + this.state.grandTotal)
+        array.splice(index, 1)
+        this.state.itemTotal.splice(index, 1)
+        this.setState({quotedItems: array})
     }
 
     render() {
@@ -214,6 +232,7 @@ class EstimatePage extends Component {
                             <Button
                                 color="danger"
                                 className="btn btn-sm"
+                                onClick={this.removeQuoteItem.bind(this, index)}
                             >&times;</Button>
                             </ListGroupItem>
                         ))}
