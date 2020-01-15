@@ -4,10 +4,6 @@ import {
     Modal,
     ModalHeader,
     ModalBody,
-    Form,
-    FormGroup,
-    Label,
-    Input,
     ListGroup,
     ListGroupItem
 } from 'reactstrap'
