@@ -1,0 +1,79 @@
+npm init
+npm i express body-parser mongoose concurrently
+npm i -D nodemon
+
+open package.json and change:
+"scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+
+dont forget to whitelist IP address in MongoDB Atlas website
+mongoDB keys is in config folder\keys.js
+
+  create file 'server.js'
+  to run : npm run server
+
+  mongoDB schema is in models folder
+
+  folder routes/api -> contains all routing for DB query
+
+  create a new folder client
+
+  get to the folder
+  'create-react-app .'
+
+  take a look at App.js in the client folder
+
+  install bootstrap
+  in the client folder
+  npm i bootstrap reactstrap uuid react-transition-group
+  (react-transition-group.. fade out in effect)
+
+  in the client folder
+  npm i redux react-redux redux-thunk
+
+  store.js handle all operation and state tree
+
+  redux works:
+  reducers folder
+    index.js            specify reducers used
+    itemReducer.js      contains state that want to shared between components
+    types.js            operation keywords use in itemReducer
+    ItemAction.js       bind types.js to itemReducer
+    
+in client folder
+npm i axios
+http client for fetch api
+
+create a new schema for user
+in the models folder users.js
+new router in routes\api folder
+users.js
+
+adding users schema in server.js
+
+no longer need body-parser
+npm remove body-parser
+
+how multiple pages works in react
+in client folder
+npm i react-route-dom
+
+in index.js
+ReactDOM.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>, 
+    document.getElementById('root'));
+
+  in App.js
+      <div>
+        <Route exact path="/"           component={ Home }/>
+        <Route exact path="/materials"  component={ MaterialPage }/>
+        <Route exact path="/estimate"   component={ EstimatePage }/>
+      </div>
+
+
+trying to integrate p5
+npm i p5 react-p5-wrapper

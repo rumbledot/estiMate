@@ -1,0 +1,62 @@
+
+        
+            {
+                id: uuid(),
+                name: 'Hebel',
+                measured_by: 'm2',
+                price: '10000',
+                category: 'wall' },
+            {
+                id: uuid(),
+                name: 'Ceramic tile 1',
+                measured_by: 'm2',
+                price: '12000',
+                category: 'floor' },
+            {
+                id: uuid(),
+                name: 'Ceramic tile 2',
+                measured_by: 'm2',
+                price: '15000',
+                category: 'floor' },
+            {
+                id: uuid(),
+                name: 'plaster',
+                measured_by: 'm2',
+                price: '1000',
+                category: 'wall' },
+            {
+                id: uuid(),
+                name: 'Wall paint 1',
+                measured_by: 'm2',
+                price: '2000',
+                category: 'wall' },
+            {
+                id: uuid(),
+                name: 'Wall paint 2',
+                measured_by: 'm2',
+                price: '2200',
+                category: 'wall' },
+            {
+                id: uuid(),
+                name: 'Roof 1',
+                measured_by: 'm2',
+                price: '200000',
+                category: 'roof' },
+            {
+                id: uuid(),
+                name: 'Door 1',
+                measured_by: 'unit',
+                price: '1000',
+                category: 'furniture' },
+            {
+                id: uuid(),
+                name: 'Half window',
+                measured_by: 'unit',
+                price: '1000',
+                category: 'furniture' },
+            {
+                id: uuid(),
+                name: 'Full window',
+                measured_by: 'unit',
+                price: '1000',
+                category: 'furniture' }
