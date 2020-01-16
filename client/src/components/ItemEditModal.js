@@ -10,7 +10,8 @@ import {
     Input
 } from 'reactstrap'
 import { connect } from 'react-redux'
-import { editItem, updateItem } from '../actions/ItemActions'
+import { updateItem } from '../actions/ItemActions'
+import PropTypes from 'prop-types'
 
 class ItemEditModal extends Component {
     state = {
@@ -18,11 +19,8 @@ class ItemEditModal extends Component {
         name: '',
         measured_by: '',
         price: '',
-        category: ''
-    }
-
-    componentDidMount() {
-        this.props.editItem(this.props.id)
+        category: '',
+        editedItem: this.props.edittedItem
     }
 
     toggle = () => {
@@ -52,6 +50,14 @@ class ItemEditModal extends Component {
     }
 
     render() {
+        // console.log("edit item : " + editedItem)
+
+        // for(const i of item) {
+        //     if (i._id === this.state.itemID) {
+        //         editItem = i
+        //     }
+        // }
+
         return (
             <div>
                 <Button
@@ -66,7 +72,7 @@ class ItemEditModal extends Component {
                     >
                         <ModalHeader
                             toggle={this.toggle}
-                        >Add a new material</ModalHeader>
+                        >Edit material</ModalHeader>
                         <ModalBody>
                             <Form onSubmit={this.onSubmit}>
                                 <FormGroup>
@@ -75,30 +81,31 @@ class ItemEditModal extends Component {
                                         type="text" 
                                         name="name" 
                                         id="itemName" 
-                                        placeholder="Specify material's name" onChange={this.onChange}/>
+                                        value={this.state.editedItem.name} 
+                                        onChange={this.onChange}/>
                                     <Label for="item">Measured by</Label>
                                     <Input 
                                         type="text"
                                         name="measured_by"
                                         id="itemMeasuredBy" 
-                                        placeholder="Specify how material's is measured" onChange={this.onChange}/>
+                                        value={this.state.editedItem.measured_by} onChange={this.onChange}/>
                                     <Label for="item">Price</Label>
                                     <Input 
                                         type="text" 
                                         name="price" 
                                         id="itemPrice" 
-                                        placeholder="Specify material's price" onChange={this.onChange}/>
+                                        value={this.state.editedItem.price} onChange={this.onChange}/>
                                     <Label for="item">Category</Label>
                                     <Input 
                                         type="text" 
                                         name="category" 
                                         id="itemCategory" 
-                                        placeholder="Specify material's category" onChange={this.onChange}/>
+                                        value={this.state.editedItem.category} onChange={this.onChange}/>
                                     <Button
                                         color="dark"
                                         style={{marginTop: '2rem'}}
                                         block
-                                        >Add material</Button>
+                                        >Save</Button>
                                 </FormGroup>
                             </Form>
                         </ModalBody>
@@ -109,7 +116,7 @@ class ItemEditModal extends Component {
 }
 
 const mapStateToProps = state => ({
-    item:state.item
+    item: state.item
 })
 
-export default connect(mapStateToProps,{ editItem })(ItemEditModal)
+export default connect(mapStateToProps,{ updateItem })(ItemEditModal)

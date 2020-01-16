@@ -16,7 +16,8 @@ import MaterialPage from "./pages/materials"
 import EstimatePage from "./pages/estimate"
 import P5 from "./pages/p5"
 import {
-  Route,
+  Switch,
+  Route
 } from 'react-router-dom'
 
 
@@ -27,7 +28,7 @@ class App extends Component {
         <Route exact path="/"           component={ Home }/>
         <Route exact path="/materials"  component={ MaterialPage }/>
         <Route exact path="/estimate"   component={ EstimatePage }/>
-        <Route exact path="/p5"   component={ P5 }/>
+        <Route exact path="/p5"         component={ P5 }/>
       </div>
     );
   }

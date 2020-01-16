@@ -41,7 +41,7 @@ export const editItem = id => dispatch => {
         .then (res => 
             dispatch({
                 type: EDIT_ITEM,
-                payload: id
+                payload: res.data
             }))
 }
 
@@ -50,7 +50,7 @@ export const updateItem = (id, item) => dispatch => {
         .then (res => 
             dispatch({
                 type: UPDATE_ITEM,
-                payload: id
+                payload: res.data
             }))
 }
 

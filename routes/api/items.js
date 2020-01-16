@@ -39,15 +39,13 @@ router.post('/', (req, res) => {
 // @desc    Update an Item
 // @access  Public
 router.post('/', (req, res) => {
-    Item.findById(req.params.id)
-    const newItem = new Item({
-        name: req.body.name,
-        measured_by: req.body.measured_by,
-        price: req.body.price,
-        category:  req.body.category
-    })
-
-    newItem.save().then(item => res.json(item))
+    Item.findByIdAndUpdate(req.params.id, 
+        {$set:{ 
+            name: req.body.name,
+            measured_by: req.body.measured_by,
+            price: req.body.price,
+            category:  req.body.category
+        }})
 })
 
 // @route   DELETE api/items/:id

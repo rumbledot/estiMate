@@ -36,23 +36,23 @@ class MaterialList extends Component {
             <Container>
                 <ListGroup>
                     <TransitionGroup>
-                        {items.map(({ _id, name, measured_by, price, category }) => (
-                            <CSSTransition key={_id} timeout={500} classNames="fade">
+                        {items.map(( item ) => (
+                            <CSSTransition key={item._id} timeout={500} classNames="fade">
                                 <ListGroupItem>
                                 <Button
                                     className="edit-btn"
                                     color="primary"
                                     size="sm"
-                                    onClick={this.onEditClick.bind(this, _id)}
+                                    onClick={this.onEditClick.bind(this, this._id)}
                                 >edit</Button>
                                 <Button
                                     className="remove-btn"
                                     color="danger"
                                     size="sm"
-                                    onClick={this.onDeleteClick.bind(this, _id)}
+                                    onClick={this.onDeleteClick.bind(this, item._id)}
                                 >&times;</Button>
-                                {name}, {measured_by}, {price}, {category}
-                                {/* <ItemEditModal/> */}
+                                {item.name}, {item.measured_by}, {item.price}, {item.category}
+                                <ItemEditModal edittedItem={item}/>
                                 </ListGroupItem>
                             </CSSTransition>
                         ))}
