@@ -16,7 +16,6 @@ import MaterialPage from "./pages/materials"
 import EstimatePage from "./pages/estimate"
 import P5 from "./pages/p5"
 import {
-  Switch,
   Route
 } from 'react-router-dom'
 
