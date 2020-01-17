@@ -39,12 +39,12 @@ class MaterialList extends Component {
                         {items.map(( item ) => (
                             <CSSTransition key={item._id} timeout={500} classNames="fade">
                                 <ListGroupItem>
-                                <Button
+                                {/* <Button
                                     className="edit-btn"
                                     color="primary"
                                     size="sm"
                                     onClick={this.onEditClick.bind(this, this._id)}
-                                >edit</Button>
+                                >edit</Button> */}
                                 <Button
                                     className="remove-btn"
                                     color="danger"
@@ -52,7 +52,7 @@ class MaterialList extends Component {
                                     onClick={this.onDeleteClick.bind(this, item._id)}
                                 >&times;</Button>
                                 {item.name}, {item.measured_by}, {item.price}, {item.category}
-                                <ItemEditModal edittedItem={item}/>
+                                {/* <ItemEditModal edittedItem={item}/> */}
                                 </ListGroupItem>
                             </CSSTransition>
                         ))}

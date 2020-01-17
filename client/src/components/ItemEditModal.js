@@ -81,26 +81,26 @@ class ItemEditModal extends Component {
                                         type="text" 
                                         name="name" 
                                         id="itemName" 
-                                        value={this.state.editedItem.name} 
+                                        placeholder={this.state.editedItem.name} 
                                         onChange={this.onChange}/>
                                     <Label for="item">Measured by</Label>
                                     <Input 
                                         type="text"
                                         name="measured_by"
                                         id="itemMeasuredBy" 
-                                        value={this.state.editedItem.measured_by} onChange={this.onChange}/>
+                                        placeholder={this.state.editedItem.measured_by} onChange={this.onChange}/>
                                     <Label for="item">Price</Label>
                                     <Input 
                                         type="text" 
                                         name="price" 
                                         id="itemPrice" 
-                                        value={this.state.editedItem.price} onChange={this.onChange}/>
+                                        placeholder={this.state.editedItem.price} onChange={this.onChange}/>
                                     <Label for="item">Category</Label>
                                     <Input 
                                         type="text" 
                                         name="category" 
                                         id="itemCategory" 
-                                        value={this.state.editedItem.category} onChange={this.onChange}/>
+                                        placeholder={this.state.editedItem.category} onChange={this.onChange}/>
                                     <Button
                                         color="dark"
                                         style={{marginTop: '2rem'}}
