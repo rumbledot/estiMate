@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "homepage": "http://rumbledot.github.io/estimate"
+    "homepage": "https://rumbledot.github.io/estiMate/"
   },
   "eslintConfig": {
     "extends": "react-app"
