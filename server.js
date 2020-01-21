@@ -6,6 +6,7 @@ const app = express()
 
 // Bodyparser Middleware
 app.use(express.json())
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 // DB Config
 const db = require('./config/keys').mongoURI
