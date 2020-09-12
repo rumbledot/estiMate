@@ -1,9 +1,11 @@
 # estiMate
+[To project](https://blooming-gorge-91386.herokuapp.com/)
 
 ### Description:
+This is an assignment and experimentation using MERN stack.
+
 An app that can help estimate your house/building construction cost.
 
-[estiMate](https://blooming-gorge-91386.herokuapp.com/)
 
 ### Objective:
 I wanted to learn developing a web-app using framework and a non-SQL database.
