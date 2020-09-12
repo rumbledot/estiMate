@@ -6,6 +6,7 @@ This is an assignment and experimentation using MERN stack.
 
 An app that can help estimate your house/building construction cost.
 
+No longer fully functional as I have reuse MongoDB Atlas for something else.
 
 ### Objective:
 I wanted to learn developing a web-app using framework and a non-SQL database.
